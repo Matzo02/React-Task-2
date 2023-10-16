@@ -11,20 +11,20 @@ export default function Calculator() {
     const buttonName = e.target.name;
   
     if (isNaN(buttonName)) {
-      // If an operator button is clicked
+      
       if (selectedOperator && selectedOperator !== buttonName) {
-        // If a different operator is already selected, update the selected operator
+        
         setSelectedOperator(buttonName);
         setResult(result.slice(0, -1).concat(buttonName));
       } else if (!selectedOperator) {
-        // Otherwise, select the operator and append it to the result
+        
         setSelectedOperator(buttonName);
         setResult(result.concat(buttonName));
       }
     } else {
-      // If a number button is clicked
+      
       if (selectedOperator) {
-        // If an operator is already selected, append the number to the result after the operator
+        
         if (result.slice(-1) === selectedOperator) {
           setResult(result.concat(buttonName));
         } else {
@@ -32,7 +32,7 @@ export default function Calculator() {
         }
         setSelectedOperator('');
       } else {
-        // Otherwise, simply append the number to the result
+       
         setResult(result.concat(buttonName));
       }
     }
